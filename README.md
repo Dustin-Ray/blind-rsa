@@ -1,12 +1,10 @@
-# Today on another episode of "solving impossible problems with cryptography":
+# Today on another episode of _solving impossible problems with cryptography_:
 
-Suppose agent Bob gives you a sealed envelope. Contained within is a message, and Bob claims the message is signed by President Alice. However, the message _and_ the signature are top-secret and cannot be revealed. Can we verify that a secret message and its signature are valid, without ever opening the envelope?
+Suppose agent Bob has a sealed envelope. Contained within is a message, and Bob claims the message is signed by President Alice. However, the message _and_ the signature are top-secret and cannot be revealed. Can we verify that a secret message and its signature are valid, without ever opening the envelope?
 
 <p align="center">
   <img src="https://github.com/drcapybara/blind-rsa/assets/40841027/2e069be5-649c-48af-931f-3b1de3246d23" width="350" height="350">
 </p>
-
-
 
 **Initial Setup:**
 - Alice's RSA public key is $(e, n)$.
@@ -16,7 +14,7 @@ Suppose agent Bob gives you a sealed envelope. Contained within is a message, an
 
 **The ZK Proof Process (Repeated $k$ Times for soundness error $2^{-k}$ ):**
 1. *Prover's Randomization:*
-   - The prover picks a random number $r_i \mod{n}$, computes $d = r_i^e \mod{n}$.
+   - The prover picks a random number $r_i \mod{n}$, and computes $d = r_i^e \mod{n}$. $r_i$ is secret, and $d$ is publicly known.
 
 2. *Verifier's Challenge:*
    - The Verifier picks a random bit $b_i$ and sends it back to the prover.
@@ -28,4 +26,8 @@ Suppose agent Bob gives you a sealed envelope. Contained within is a message, an
 **Zero-Knowledge:**
 The protocol is blinding for both the message and the signature. If $z$ is chosen at random, then $c$ is perfectly blinded as a one-time-pad. The only assumption is that RSA is secure and signatures cannot be forged. The partially-homomorphic property of RSA allows for multiplications on blinded values.
 
+**Fixed-time:**
+Although entirely insecure, this toy version of RSA is powered by [crypto-bigint ](https://github.com/RustCrypto/crypto-bigint). All operations are thus performed in fixed-time. Additionally, note that values are represented in Montgomery form, reducing the need for expensive modular reductions.
+
+**Thanks**
 Thank you once again to Dr. Barreto for the riveting exercise.
