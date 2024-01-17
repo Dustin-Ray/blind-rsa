@@ -1,6 +1,4 @@
-# Zero-Knowledge Proof Protocol for RSA Signature without Revealing Signature or Message
-
-Today on another episode of "solving impossible problems with cryptography":
+# Today on another episode of "solving impossible problems with cryptography":
 
 Suppose agent Bob gives you a sealed envelope. Contained within is a message, and Bob claims the message is signed by President Alice. However, the message _and_ the signature are top-secret and cannot be revealed. Can we verify that a secret message and its signature are valid, without ever opening the envelope?
 
