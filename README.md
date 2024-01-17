@@ -1,4 +1,4 @@
-# Today on another episode of _solving impossible problems with cryptography_:
+# Today on another episode of _impossible problems solved with cryptography_:
 
 Suppose agent Bob has a sealed envelope. Contained within is a message, and Bob claims the message is signed by President Alice. However, the message _and_ the signature are top-secret and cannot be revealed. Can we verify that a secret message and its signature are valid, without ever opening the envelope?
 
