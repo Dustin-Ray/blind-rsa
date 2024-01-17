@@ -29,5 +29,5 @@ The protocol is blinding for both the message and the signature. If $z$ is chose
 **Fixed-time:**
 Although entirely insecure, this toy version of RSA is powered by [crypto-bigint ](https://github.com/RustCrypto/crypto-bigint). All operations are thus performed in fixed-time. Additionally, note that values are represented in Montgomery form, reducing the need for expensive modular reductions.
 
-**Thanks**
+**Thanks:**
 Thank you once again to Dr. Barreto for the riveting exercise.
