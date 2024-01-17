@@ -3,7 +3,7 @@
 Suppose agent Bob has a sealed envelope. Contained within is a message, and Bob claims the message is signed by President Alice. However, the message _and_ the signature are top-secret and cannot be revealed. Can we verify that a secret message and its signature are valid, without ever opening the envelope?
 
 <p align="center">
-  <img src="https://github.com/drcapybara/blind-rsa/assets/40841027/2e069be5-649c-48af-931f-3b1de3246d23" width="350" height="350">
+  <img src="https://github.com/drcapybara/blind-rsa/assets/40841027/e47caab3-2541-4d38-b422-3e079fe23be7" width="350" height="350">
 </p>
 
 **Initial Setup:**
