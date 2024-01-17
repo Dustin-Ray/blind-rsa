@@ -45,7 +45,7 @@ pub fn main() {
 
     // Soundness error = 1/2^k
     let k = 20;
-    for i in 0..k {
+    for _ in 0..k {
         // Prover picks a random r_i
         let r_i = Uint::random_mod(&mut OsRng, modulus);
 
@@ -66,8 +66,6 @@ pub fn main() {
             assert_eq!(
                 d,
                 const_monty_form!(z_i, Modulus).pow(&e).retrieve(),
-                "Verification failed at iteration {}",
-                i
             );
         // b_i = 1. Verifier checks that u^e = d * c mod n
         } else {
