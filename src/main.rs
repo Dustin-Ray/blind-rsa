@@ -64,3 +64,16 @@ pub fn main() {
         }
     }
 }
+
+#[test]
+fn test_rem() {
+    let hex = "00".repeat(16 - 3) + "010001";
+    let n = &NonZero::new(U128::from_be_hex(&hex)).unwrap();
+    let a = U128::random_mod(&mut OsRng, &n);
+    let b = U128::random_mod(&mut OsRng, &n);
+    println!("n   = {}", n);
+    println!("a   = {}", a);
+    println!("b   = {}", b);
+    println!("a*b = {}", (a * b));
+    println!("a*b = {}", (a * b).rem(n));
+}
